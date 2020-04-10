@@ -46,13 +46,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(expressValidator())
-
-
-//app.use(express.static(path.join(__dirname, 'public')));
-
-// app.use('/', indexRouter);
-// app.use('/users', usersRouter);
-
+app.use(express.static(path.join(__dirname, 'public')));
 
 var Blog = mongoose.model("Blog",blogSchema);
 app.get("/",function(req,res){
@@ -63,13 +57,11 @@ app.get("/",function(req,res){
 
 app.get("/blogs",function(req,res){
     var errorMsg = "";
-    Blog.find({}).lean().exec(function(err,blogs){
+    Blog.find({}).sort([['created', -1]]).limit(10).lean().exec(function(err,blogs){
        if(err){
         console.log("Error adding employee "  + err); //Better to write to error log
         errorMsg = "Apologies, we were unable to add this employee to the database.  If this problem persists please contact an Admin.  <br/><a href='/'> Homepage </a>";
        }  else {
-        console.log("we got blogs: " + blogs)
-        //   res.render("list",{blogs:blogs});
            res.render('list', {
             errorMsg: errorMsg,
             blogs: blogs});
@@ -95,7 +87,7 @@ app.post('/blogs', function(req, res){
 	if( !errors ) {   //No errors were found.     	             
             Blog.create(blog,function(err,blog){
                 if(err){
-                    res.rende("new");
+                    res.render("new");
                 } else{
                     res.redirect("/blogs");
                 }
@@ -157,20 +149,25 @@ app.post("/blogs/:id", function(req,res){
            console.log("Error editing blog post "  + err);
            res.redirect("/blogs");
        } else{
-           console.log("Edited blog post with "  + req.params.id + ", blog: " + blog);
+           console.log("Edited blog post with "  + req.params.id);
            res.redirect("/blogs/"+req.params.id);
        }
    })
 });
 
-app.delete("/blogs/:id",function(req,res){
+
+app.get("/blogs/:id/delete",function(req,res){
+    var errorMsg = "";
+    var id = req.sanitize('id').escape().trim();
+    console.log("Deleting blog post with id "  + req.params.id);
     Blog.findByIdAndRemove(req.params.id,function(err){
-       if(err){
-           res.redirect("/blogs");
-       } else{
-           res.redirect("/blogs");
-       }
-    }) ;  
-});
+        if(err){
+            res.redirect("/blogs");
+        } else{
+            res.redirect("/blogs");
+        }
+    });
+ });
+
 
 module.exports = app;

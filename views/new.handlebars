@@ -1,13 +1,12 @@
-<h1>Add Blog Post</h1>
+<h1>Create a New Blog Post</h1>
 {{#if errorMsg }}
-        <p>{{{errorMsg}}}</p>
+      <p>{{{errorMsg}}}</p>
 {{/if}}
-<form action="/blogs" method="post">
-  <label for="body">Content:</label>
-  <input type="text" id="body" name="body" value="{{this.body}}" /><br />
+<form action="/blogs" method="post" id="usrform">
   <label for="title">Title:</label>
-  <input type="text" id="title" name="title" value="{{this.title}}" /><br />
+  <input type="text" id="title" name="title" value="{{this.title}}" />
   <input type="submit" value="Submit" > <br/><br/>
 </form>
+<textarea id="body" name="body" value="{{this.body}} rows="10" cols="50"" form="usrform"></textarea>
 <br />
 <a href="/blogs">List of blogs</a>
