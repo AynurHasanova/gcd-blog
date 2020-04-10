@@ -1,0 +1,16 @@
+<h1>Blogs</h1>
+{{! employees are only available if errorMsg is blank }}
+{{#if errorMsg }}
+        <p>{{{errorMsg}}}</p>
+{{else}}
+<ul>
+        {{#each blogs}}
+                <li>
+                       "Tapdiq: " {{this.title}} {{this.body}} ({{this._id}})
+                        {{this.firstname}} {{this.surname}} ({{this.id}}) <a href="/blogs/{{this._id}}">View</a> <a href="/blogs/{{this._id}}/edit">Update</a> <a href="/blogs/{{this._id}}/delete">Delete</a>
+                </li>
+        {{/each}}
+</ul>
+{{/if}}
+
+<a href="/blogs/new"> Create a new blog post</a>

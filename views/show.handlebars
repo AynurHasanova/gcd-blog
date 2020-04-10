@@ -1,0 +1,9 @@
+<h1>Blog Details</h1>
+{{#if errorMsg }}
+	<p>{{{errorMsg}}}</p>
+{{else}}
+	<p>Title:{{blog.title}} <br/>
+	Content:{{blog.body}}</p>
+{{/if}}
+<br />
+<a href="/blogs">List of blog posts</a>
