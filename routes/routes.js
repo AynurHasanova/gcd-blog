@@ -29,7 +29,6 @@ module.exports = function(app, passport) {
 
     app.post('/blogs', isLoggedIn, function(req, res){
         req.assert('title', 'Title is required').notEmpty();
-    // req.assert('image', 'Image is required').notEmpty() ;
         req.assert('body', 'Blog content is required').notEmpty();
         var errors = req.validationErrors();
 
