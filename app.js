@@ -10,9 +10,17 @@ var flash = require('connect-flash');
 
 var app = express();
 
+var customHBS = hbs.create({
+    defaultLayout: 'main',
+    layoutsDir: __dirname + '/views/layouts/',
+    partialsDir: [
+        __dirname + '/views/partials/'
+    ]
+});
+
 // Set up handlebars templating
 app.set('views', path.join(__dirname, 'views'));
-app.engine('handlebars', hbs({defaultLayout: 'main', layoutsDir: __dirname + '/views/layouts/'}));
+app.engine('handlebars', customHBS.engine);
 app.set('view engine','handlebars');
 
 app.use(logger('dev'));

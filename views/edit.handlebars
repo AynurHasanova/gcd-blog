@@ -1,15 +1,15 @@
 {{#if errorMsg }}
 	<p>{{{errorMsg}}}</p>
 {{/if}}
+{{> header}}
 {{#if blog}}
 <div class="ui middle aligned center aligned grid container">
  <div class="column">
-     <h2 class="ui teal image header">
-        <img src="/images/favicon.ico" class="image"/>
+     <h3 class="ui teal image header">
         <div class="content">
             Edit Blog Post
         </div>
-    </h2>
+    </h3>
 	<form action="/blogs/{{blog._id}}" method="POST" form="usrform" class="ui large form">
 	<div class="ui stacked segment">
 		<input type="hidden" id="id" name="id" value="{{blog._id}}">
@@ -30,7 +30,4 @@
 	</form>
 {{/if}}
 
-<div class="ui message">
-	<i class="list ul icon"></i>
-	<a href="/blogs">List of blogs</a>    
-</div>
+{{> footer}}

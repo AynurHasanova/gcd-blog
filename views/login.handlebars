@@ -6,14 +6,15 @@
             </div>
         </div>
     {{/if}}
+   {{> header}}
+
     <div class="ui middle aligned center aligned grid container">
         <div class="column">
-            <h2 class="ui teal image header">
-                <img src="/images/favicon.ico" class="image"/>
+            <h3 class="ui teal image header">
                 <div class="content">
-                    New-Medium - Online publishing platform
+                    Login with your user name and password
                 </div>
-            </h2>
+            </h3>
             <form action="/login" method="POST" class="ui large form">
                 <div class="ui stacked segment">
                     <div class="field">
@@ -34,5 +35,8 @@
                 Are you a new user?
                 <a href="/signup">Sign Up</a>
             </div>
+          
+            {{> footer}}
+            
         </div>
     </div>
