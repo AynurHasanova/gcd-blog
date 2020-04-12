@@ -17,7 +17,7 @@ It provides the following functionality:
 
 ## How to run
 
-From the root of the projecr run it as: 
+From the root of the project run it as: 
 
 ```bash
 ./bin/www
