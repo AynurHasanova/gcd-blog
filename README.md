@@ -19,7 +19,9 @@ It provides the following functionality:
 
 From the root of the projecr run it as: 
 
+```bash
 ./bin/www
+```
 
 ## Code organisation
 
