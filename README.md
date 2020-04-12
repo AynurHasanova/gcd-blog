@@ -1,6 +1,6 @@
 # gcd-blog
 
-This blog post was built by using NodeJS, ExpressJS, Handlebars, and MongoDB.
+This blog post was built by using NodeJS, ExpressJS, Handlebars, MongoDB, Semantic-UI.
 
 It provides the following functionality:
 
@@ -15,6 +15,11 @@ It provides the following functionality:
 5. A home page with the 10 latest blog posts
 6. A contact menu item
 
+## How to run
+
+From the root of the projecr run it as: 
+
+./bin/www
 
 ## Code organisation
 
@@ -57,6 +62,8 @@ It provides the following functionality:
    ├── show.handlebars
    └── signup.handlebars
 
+
+The UI design is built by using Semantic-UI from https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css and this CSS file is included in the views/layouts/main.handlebars file.
 
 ## Installation
 

@@ -39,7 +39,6 @@ module.exports = function(passport){
     function(req, userName, password, done) {
         process.nextTick(function() {
         User.findOne({ 'userName' :  userName }, function(err, user) {
-            // if there are any errors, return the error
             if (err)
                 return done(err);
 
@@ -51,7 +50,7 @@ module.exports = function(passport){
                 newUser.userName = userName;
                 newUser.password = newUser.generateHash(password);
 
-                // save the user
+                // it saves the user
                 newUser.save(function(err) {
                     if (err)
                         throw err;
