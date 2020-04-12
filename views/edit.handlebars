@@ -1,17 +1,36 @@
-<h1>Edit Blog Post</h1>
 {{#if errorMsg }}
 	<p>{{{errorMsg}}}</p>
 {{/if}}
 {{#if blog}}
-	<form action="/blogs/{{blog._id}}" method="POST" form="usrform">
+<div class="ui middle aligned center aligned grid container">
+ <div class="column">
+     <h2 class="ui teal image header">
+        <img src="/images/favicon.ico" class="image"/>
+        <div class="content">
+            Edit Blog Post
+        </div>
+    </h2>
+	<form action="/blogs/{{blog._id}}" method="POST" form="usrform" class="ui large form">
+	<div class="ui stacked segment">
 		<input type="hidden" id="id" name="id" value="{{blog._id}}">
-		<label for="title">Title:</label>
-		<input type="text" id="title" name="title" value="{{blog.title}}"/><br />
-		<label for="body">Content:</label>
-		<input type="text" id="body" name="body" value="{{blog.body}}" /><br />
-		<input type="submit" value="Submit" > <br/><br/>
+		<div class="field">
+              <div class="ui left icon input">
+                  <i class="file outline icon"></i>
+				  <input type="text" id="title" name="title" value="{{blog.title}}"/>
+              </div>
+        </div>
+		<div class="field">
+              <div class="ui left icon input">
+                  <i class="file outline icon"></i>
+		          <input type="text" id="body" name="body" value="{{blog.body}}" />
+              </div>
+        </div>
+	    <input type="submit" value="Submit" class="ui fluid large teal submit button">
+	</div>
 	</form>
 {{/if}}
 
-<br />
-<a href="/blogs">List of blog posts</a>
+<div class="ui message">
+	<i class="list ul icon"></i>
+	<a href="/blogs">List of blogs</a>    
+</div>

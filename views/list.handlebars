@@ -1,15 +1,19 @@
-<h1>Blogs</h1>
+<div class="ui sizer vertical segment">
+
+<div class="ui huge header">Ten most recent blog posts</div>
 {{! employees are only available if errorMsg is blank }}
 {{#if errorMsg }}
         <p>{{{errorMsg}}}</p>
 {{else}}
-<ul>
+<ul class="ui link list">
         {{#each blogs}}
-          <li>
-            {{this.title}} {{this.body}} <a href="/blogs/{{this._id}}">View</a> <a href="/blogs/{{this._id}}/edit">Update</a> <a href="/blogs/{{this._id}}/delete">Delete</a>
+          <li class="active item">
+            {{this.title}} {{this.body}} <a href="/blogs/{{this._id}}" class="active item">View</a> <a href="/blogs/{{this._id}}/edit" class="item">Update</a> <a href="/blogs/{{this._id}}/delete" class="item">Delete</a>
           </li>
         {{/each}}
 </ul>
 {{/if}}
+
+</div>
 
 <a href="/blogs/new">Create a new blog post</a>
