@@ -23,6 +23,7 @@ From the root of the projecr run it as:
 
 ## Code organisation
 
+```
 ├── app.js
 ├── bin
 │  ├── install-dependencies.sh
@@ -61,7 +62,7 @@ From the root of the projecr run it as:
    │  └── header.handlebars
    ├── show.handlebars
    └── signup.handlebars
-
+```
 
 The UI design is built by using Semantic-UI from https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css and this CSS file is included in the views/layouts/main.handlebars file.
 
