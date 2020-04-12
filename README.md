@@ -1,6 +1,6 @@
-# gcd-blog
+# New-Medium - An Online Publishing Platform
 
-This blog post was built by using NodeJS, ExpressJS, Handlebars, MongoDB, Semantic-UI.
+This blog platform is called New-Medium and was built by using a couple of libraries, mainly NodeJS, ExpressJS, Handlebars, MongoDB, Mongoose, and Semantic-UI.
 
 It provides the following functionality:
 
@@ -11,6 +11,7 @@ It provides the following functionality:
 2. Creating a new blog post
 3. Editing an existing blog post
 4. Deleting an existing blog post
+   - Asks the user to confirm before deleting the post
 4. Making sure the user is logged in before creating, editing, or deleting a blog post
 5. A home page with the 10 latest blog posts
 6. A contact menu item
@@ -33,6 +34,14 @@ From the root of the project run it as:
 ├── config
 │  ├── database.js
 │  └── passport.js
+├── docs
+│  └── images
+│     ├── create-page.png
+│     ├── edit-page.png
+│     ├── home-page.png
+│     ├── login-page.png
+│     ├── post-details-page.png
+│     └── signup-page.png
 ├── mongodb-backup
 │  ├── blogs.json
 │  ├── test
@@ -50,6 +59,7 @@ From the root of the project run it as:
 │  └── stylesheets
 │     └── style.css
 ├── README.md
+├── README.pdf
 ├── routes
 │  └── routes.js
 └── views
@@ -105,3 +115,17 @@ The version of MongoDB used is 4.2 and NodeJS is 13.12.0. ./bin/install-dependen
    **Note1:** MongoDB keeps its backup in binary .bson files. You need only the ./mongodb-backup/test foldeer to restore. "test" is the name of the database. The blogs.json and users.json files are provided for information purposes only and the binary files are not user-friendly to read.
 
    **Note2:** It is not required to restore the MongoDB database. If it is not restored it will start fresh and users can start to register and post blog posts.
+
+6. Screenshots
+
+![Home Page](docs/images/home-page.png?raw=true "Home Page")
+
+![Login Page](docs/images/login-page.png?raw=true "Login Page")
+
+![Signup Page](docs/images/signup-page.png?raw=true "Signup Page")
+
+![Post Details Page](docs/images/post-details-page.png?raw=true "Post Details Page")
+
+![Post Create Page](docs/images/create-page.png?raw=true "Post Create Page")
+
+![Post Edit Page](docs/images/edit-page.png?raw=true "Post Edit Page")
